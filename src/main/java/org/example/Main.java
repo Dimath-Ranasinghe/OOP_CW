@@ -1,9 +1,27 @@
 package org.example;
 
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Variables to hold configuration values
+        int poolCapacity;
+        int vendorDelay;
+        int customerDelay;
+
+        // Prompt the user for input
+        System.out.print("Enter the pool capacity: ");
+        poolCapacity = scanner.nextInt();
+
+        System.out.print("Enter the vendor delay (in milliseconds): ");
+        vendorDelay = scanner.nextInt();
+
+        System.out.print("Enter the customer delay (in milliseconds): ");
+        customerDelay = scanner.nextInt();
 
         // Initialize the configuration
         Configuration config = new Configuration();
@@ -13,9 +31,9 @@ public class Main {
         System.out.println("Current Configuration: " + config);
 
         // Update configuration if needed
-        config.setPoolCapacity(7);
-        config.setVendorDelay(1500);
-        config.setCustomerDelay(2500);
+        config.setPoolCapacity(poolCapacity);
+        config.setVendorDelay(vendorDelay);
+        config.setCustomerDelay(customerDelay);
 
         // Save the updated configuration to the file
         config.saveConfig();
