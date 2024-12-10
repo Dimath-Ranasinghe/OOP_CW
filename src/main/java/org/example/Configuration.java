@@ -4,43 +4,59 @@ import java.io.*;
 import java.util.Properties;
 
 public class Configuration {
-    private int poolCapacity;   // Maximum number of tickets in the pool
-    private int vendorDelay;    // Time delay for the vendor to add tickets (in milliseconds)
-    private int customerDelay;  // Time delay for customers to buy tickets (in milliseconds)
-    private int releaseRate;
+    private int totalTickets;   // Maximum number of tickets in the pool
+    private int ticketReleaseRate;    // Time delay for the vendor to add tickets (in milliseconds)
+    private int customerRetrievalRate;  // Time delay for customers to buy tickets (in milliseconds)
+    private int maxTicketCapacity;
 
     private static final String CONFIG_FILE = "config.properties";
 
+    public Configuration(int totalTickets, int ticketReleaseRate, int customerRetrievalRate, int maxTicketCapacity) {
+        this.totalTickets = totalTickets;
+        this.ticketReleaseRate = ticketReleaseRate;
+        this.customerRetrievalRate = customerRetrievalRate;
+        this.maxTicketCapacity = maxTicketCapacity;
+    }
+
     public Configuration() {
         // Set default values
-        this.poolCapacity = 5;
-        this.vendorDelay = 1000;
-        this.customerDelay = 2000;
+        this.totalTickets = 5;
+        this.ticketReleaseRate = 1000;
+        this.customerRetrievalRate = 2000;
+        this.maxTicketCapacity = 10;
     }
 
     // Getters and Setters
-    public int getPoolCapacity() {
-        return poolCapacity;
+    public int getTotalTickets() {
+        return totalTickets;
     }
 
-    public void setPoolCapacity(int poolCapacity) {
-        this.poolCapacity = poolCapacity;
+    public void setTotalTickets(int totalTickets) {
+        this.totalTickets = totalTickets;
     }
 
-    public int getVendorDelay() {
-        return vendorDelay;
+    public int getTicketReleaseRate() {
+        return ticketReleaseRate;
     }
 
-    public void setVendorDelay(int vendorDelay) {
-        this.vendorDelay = vendorDelay;
+    public void setTicketReleaseRate(int vendorDelay) {
+        this.ticketReleaseRate = vendorDelay;
     }
 
-    public int getCustomerDelay() {
-        return customerDelay;
+    public int getCustomerRetrievalRate() {
+        return customerRetrievalRate;
     }
 
-    public void setCustomerDelay(int customerDelay) {
-        this.customerDelay = customerDelay;
+    public void setCustomerRetrievalRate(int customerRetrievalRate) {
+        this.customerRetrievalRate = customerRetrievalRate;
+    }
+
+    public int getMaxTicketCapacity() {
+        return maxTicketCapacity;
+    }
+
+    public void setMaxTicketCapacity(int maxTicketCapacity) {
+        this.maxTicketCapacity = maxTicketCapacity;
     }
 
     // Load configuration from a file
@@ -48,10 +64,11 @@ public class Configuration {
         Properties properties = new Properties();
         try (InputStream input = new FileInputStream(CONFIG_FILE)) {
             properties.load(input);
-            System.out.println(properties.getProperty("poolCapacity", "5"));
-            this.poolCapacity = Integer.parseInt(properties.getProperty("poolCapacity", "5"));
-            this.vendorDelay = Integer.parseInt(properties.getProperty("vendorDelay", "1000"));
-            this.customerDelay = Integer.parseInt(properties.getProperty("customerDelay", "2000"));
+            System.out.println(properties.getProperty("totalTickets", "5"));
+            this.totalTickets = Integer.parseInt(properties.getProperty("totalTickets", "5"));
+            this.ticketReleaseRate = Integer.parseInt(properties.getProperty("ticketReleaseRate", "1000"));
+            this.customerRetrievalRate = Integer.parseInt(properties.getProperty("customerRetrievalRate", "2000"));
+            this.maxTicketCapacity = Integer.parseInt(properties.getProperty("maxTicketCapacity", "10"));
             System.out.println("Configuration loaded successfully.");
         } catch (IOException e) {
             System.out.println("Could not load configuration file. Using default values.");
@@ -61,9 +78,10 @@ public class Configuration {
     // Save configuration to a file
     public void saveConfig() {
         Properties properties = new Properties();
-        properties.setProperty("poolCapacity", String.valueOf(this.poolCapacity));
-        properties.setProperty("vendorDelay", String.valueOf(this.vendorDelay));
-        properties.setProperty("customerDelay", String.valueOf(this.customerDelay));
+        properties.setProperty("totalTickets", String.valueOf(this.totalTickets));
+        properties.setProperty("ticketReleaseRate", String.valueOf(this.ticketReleaseRate));
+        properties.setProperty("customerRetrievalRate", String.valueOf(this.customerRetrievalRate));
+        properties.setProperty("maxTicketCapacity", String.valueOf(this.maxTicketCapacity));
 
         try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
             properties.store(output, "Ticket System Configuration");
@@ -76,9 +94,10 @@ public class Configuration {
     @Override
     public String toString() {
         return "Configuration{" +
-                "poolCapacity=" + poolCapacity +
-                ", vendorDelay=" + vendorDelay +
-                ", customerDelay=" + customerDelay +
+                "totalTickets=" + totalTickets +
+                ", ticketReleaseRate=" + ticketReleaseRate +
+                ", customerRetrievalRate=" + customerRetrievalRate +
+                ", maxTicketCapacity=" + maxTicketCapacity +
                 '}';
     }
 }
