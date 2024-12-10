@@ -68,5 +68,10 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+        // Print results
+        System.out.println("Ticket Summary :");
+        System.out.println("Total Tickets Generated: " + totalTickets);
+        System.out.println("Ticket Release Rate : " + customer1.getPurchasedTickets());
+
     }
 }

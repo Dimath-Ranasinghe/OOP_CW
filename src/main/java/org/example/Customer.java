@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class Customer implements Runnable {
@@ -27,7 +28,7 @@ public class Customer implements Runnable {
                     purchasedTickets.add(ticket);
                     System.out.println(" purchased " + ticket);
 
-                    Thread.sleep(retrievalRate); // Simulate time taken to process the purchase
+                    TimeUnit.MICROSECONDS.sleep(1000 / retrievalRate); // Simulate time taken to process the purchase
                 }
             }
         } catch (InterruptedException e) {

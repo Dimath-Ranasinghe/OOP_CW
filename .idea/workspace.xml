@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c12e726-75b1-4f5e-bfed-875a1d465fd2" name="Changes" comment="Take the user inputs">
+    <list default="true" id="5c12e726-75b1-4f5e-bfed-875a1d465fd2" name="Changes" comment="updated variables and logics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TicketPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TicketPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vendor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,7 @@
       <workItem from="1733693835315" duration="55000" />
       <workItem from="1733693901528" duration="2284000" />
       <workItem from="1733750013109" duration="8951000" />
-      <workItem from="1733818898978" duration="6976000" />
+      <workItem from="1733818898978" duration="8259000" />
     </task>
     <task id="LOCAL-00001" summary="Added Configuration Class">
       <option name="closed" value="true" />
@@ -121,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733509940947</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated variables and logics">
+      <option name="closed" value="true" />
+      <created>1733849831585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733849831585</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +138,7 @@
     <MESSAGE value="Added Configuration Class" />
     <MESSAGE value="Added Loggers" />
     <MESSAGE value="Take the user inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Take the user inputs" />
+    <MESSAGE value="updated variables and logics" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated variables and logics" />
   </component>
 </project>

@@ -21,7 +21,7 @@ public class Vendor implements Runnable {
             for (int i = 0; i < totalTickets; i++) {
                 Ticket ticket = new Ticket(ticketCounter.getAndIncrement());
                 ticketPool.addTicket(ticket);
-                Thread.sleep(1000); // Simulate time taken to produce a ticket
+                Thread.sleep(releaseRate); // Simulate time taken to produce a ticket
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
